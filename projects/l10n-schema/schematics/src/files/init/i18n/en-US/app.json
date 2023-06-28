@@ -1,0 +1,10 @@
+{
+    "home": {
+      "greeting": "Hello world!",
+      "whoIAm": "I am {{name}}",
+      "devs": {
+        "one": "One software developer",
+        "other": "{{value}} software developers"
+      }
+    }
+  }

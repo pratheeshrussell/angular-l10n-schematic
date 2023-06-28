@@ -6,6 +6,7 @@
     "start": "ng serve",
     "build": "ng build && npm run build:schematic",
     "build:schematic": "npm run build --prefix projects/l10n-schema",
+    "publish:schema": "cd ./dist/l10n-schema && npm publish --registry http://localhost:4873/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

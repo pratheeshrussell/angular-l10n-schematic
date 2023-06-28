@@ -1,0 +1,36 @@
+import { Injectable } from '@angular/core';
+import { L10nConfig, L10nTranslationLoader, L10nProvider } from 'angular-l10n';
+import { Observable, from } from 'rxjs';
+
+export const l10nConfig: L10nConfig = {
+  format: 'language-region',
+  providers: [{ name: 'app', asset: 'app' }],
+  cache: true,
+  keySeparator: '.',
+  defaultLocale: {
+    language: 'en-US',
+    currency: 'USD',
+    timeZone: 'America/Los_Angeles',
+  },
+  schema: [
+    {
+      locale: {
+        language: 'en-US',
+        currency: 'USD',
+        timeZone: 'America/Los_Angeles',
+      },
+    },
+    { locale: { language: 'it-IT', currency: 'EUR', timeZone: 'Europe/Rome' } },
+  ],
+};
+
+@Injectable()
+export class TranslationLoader implements L10nTranslationLoader {
+  public get(
+    language: string,
+    provider: L10nProvider
+  ): Observable<{ [key: string]: any }> {
+    const data = import(`./i18n/${language}/${provider.asset}.json`);
+    return from(data);
+  }
+}

@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "scripts": {
     "build": "tsc -p tsconfig.schematics.json",
-    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/l10n-schema/"
+    "postbuild": "copyfiles schematics/*/schema.json schematics/*/files/**/**/**/**/** schematics/collection.json ../../dist/l10n-schema/"
   },
   "schematics": "./schematics/collection.json",
   "ng-add": {
     "save": "devDependencies"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   },
   "peerDependencies": {
     "@angular/common": "^16.1.0",
