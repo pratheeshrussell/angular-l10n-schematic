@@ -4,6 +4,14 @@
     "ng-add": {
       "description": "Add angular l10n package",
       "factory": "./src/ngadd#ngAdd"
+    },
+    "l10n-component": {
+      "description": "This schematic generates component with l10n support",
+      "factory": "./src/componentgen#l10nComponentGenerator",
+      "schema": "./src/componentgen.schema.json",
+      "aliases": [
+        "l10c"
+      ]
     }
   }
 }

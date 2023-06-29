@@ -1,0 +1,10 @@
+import { Component, inject } from '@angular/core';
+import { L10N_LOCALE } from 'angular-l10n';
+@Component({
+  selector: 'app-<%= dasherize(name) %>',
+  templateUrl: './<%= dasherize(name) %>.component.html',
+  styleUrls: ['./<%= dasherize(name) %>.component.scss']
+})
+export class <%= classify(name) %>Component {
+    locale = inject(L10N_LOCALE);
+}

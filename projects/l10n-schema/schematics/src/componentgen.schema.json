@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "$id": "l10n-component",
+    "title": "Angular l10n Component Schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "The name of the component",
+        "type": "string"
+      },
+      "path": {
+        "description": "The place to create the file",
+        "type": "string",
+        "format": "path",
+        "x-prompt": "Where should the file be created?",
+        "default": "src/app"
+      }
+    },
+    "required": []
+  }
